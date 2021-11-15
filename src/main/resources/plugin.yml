@@ -1,0 +1,5 @@
+name: Core
+version: '${project.version}'
+main: com.buchard36.core.Core
+api-version: 1.16
+authors: [ DaltonBurchard ]
