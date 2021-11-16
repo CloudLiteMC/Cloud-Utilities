@@ -2,7 +2,6 @@ package com.buchard36.core.config;
 
 import com.buchard36.core.Core;
 import com.buchard36.core.Manager;
-import com.buchard36.core.config.enums.ConfigMaps;
 import com.buchard36.core.config.global.GlobalConfig;
 import com.buchard36.core.config.warp.WarpConfig;
 import com.burchard36.json.PluginDataManager;

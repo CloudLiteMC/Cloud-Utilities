@@ -41,6 +41,11 @@ public final class Core extends JavaPlugin implements Api {
         return this.getApiLib().getPluginDataManager();
     }
 
+    @Override
+    public boolean isDebug() {
+        return true;
+    }
+
     public GlobalConfig getGlobalConfig() {
         return this.configManager.getGlobalConfig();
     }
