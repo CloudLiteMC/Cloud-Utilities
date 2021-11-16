@@ -13,4 +13,16 @@ public class TpaConfig {
     @Json(name = "tpa_expiration_time")
     public int tpaExpirationTime;
 
+    public final String getTpaPermission() {
+        return this.tpaPermission;
+    }
+
+    public final String getTpaHerePermission() {
+        return this.tpaHerePermission;
+    }
+
+    public final int getTpaExpirationTime() {
+        return this.tpaExpirationTime;
+    }
+
 }
