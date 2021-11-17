@@ -1,6 +1,7 @@
 package com.buchard36.core.player;
 
 import com.buchard36.core.Core;
+import com.buchard36.core.modules.tpa.TpaRequest;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -19,6 +20,7 @@ public class CorePlayer {
 
     private boolean onTpaCoolDown;
     private BukkitTask tpaTask;
+    private TpaRequest tpaRequest;
 
     public CorePlayer(final Player player) {
         this.player = player;

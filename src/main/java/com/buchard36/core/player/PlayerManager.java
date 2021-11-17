@@ -53,4 +53,12 @@ public class PlayerManager implements Manager, Listener {
     public void addNewPlayer(final Player player) {
         this.corePlayers.putIfAbsent(player.getUniqueId(), new CorePlayer(player));
     }
+
+    public final CorePlayer getPlayer(final Player player) {
+        return this.getPlayer(player.getUniqueId());
+    }
+
+    public final CorePlayer getPlayer(final UUID playerUuid) {
+        return this.corePlayers.get(playerUuid);
+    }
 }

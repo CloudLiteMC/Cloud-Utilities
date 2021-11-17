@@ -1,5 +1,6 @@
 package com.buchard36.core.modules.tpa;
 
+import com.buchard36.core.Core;
 import com.buchard36.core.modules.Module;
 import com.buchard36.core.modules.ModuleManager;
 
@@ -24,5 +25,9 @@ public class TpaModule implements Module {
     @Override
     public void reload() {
 
+    }
+
+    public final Core getPlugin() {
+        return this.manager.getPlugin();
     }
 }
