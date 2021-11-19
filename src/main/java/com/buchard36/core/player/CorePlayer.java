@@ -94,6 +94,16 @@ public class CorePlayer {
         tpaTask = null;
     }
 
+    public final void tpaRequest(final TpaRequest request) {
+        this.tpaRequest = request;
+        this.tpaTask = new BukkitRunnable() {
+            @Override
+            public void run() {
+                tpaRequest = null;
+            }
+        }.runTaskTimerAsynchronously(Core.INSTANCE, 20 * 60, 20 * 60);
+    }
+
     public final Player getPlayer() {
         return this.player;
     }

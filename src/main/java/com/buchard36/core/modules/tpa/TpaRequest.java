@@ -11,6 +11,7 @@ public class TpaRequest {
     private final TpaModule module;
     private final Player sendingPlayer;
     private final Player receivingPlayer;
+    private boolean isResolved;
 
     public TpaRequest(
             final TpaModule module,
@@ -25,6 +26,11 @@ public class TpaRequest {
     public void process() {
         final CorePlayer senderPlayer = this.module.getPlugin().getPlayerManager().getPlayer(this.sendingPlayer);
 
+        if (this.sendingPlayer.getUniqueId() == this.receivingPlayer.getUniqueId()) {
+            this.sendingPlayer.sendMessage(Component.text(convert("&cCannot send requests to self!")));
+            return;
+        }
+
         if (senderPlayer.isOnTpaCoolDown()) {
             this.sendingPlayer.sendMessage(Component.text(convert("&cYou cannot send teleport requests yet!")));
             return;
@@ -37,8 +43,17 @@ public class TpaRequest {
             return;
         }
 
+        sendingPlayer.sendMessage(Component.text(convert("&aTeleport request sent!")));
 
 
+    }
+
+    public boolean isResolved() {
+        return this.isResolved;
+    }
+
+    public final void setResolved(final boolean resolved) {
+        this.isResolved = resolved;
     }
 
 }
